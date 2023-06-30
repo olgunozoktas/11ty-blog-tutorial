@@ -1,0 +1,14 @@
+---
+title: Blog
+layout: 'base.liquid'
+---
+
+<div class="section container">
+    <h1 class="section-title">Recent articles</h1>
+    <ul role="list" class="articles__list flow">
+        {% assign reversed_posts = collections.post | reverse %}
+        {% for post in reversed_posts %}
+            {% include 'article-snippet.liquid' %}
+        {% endfor %}
+    </ul>
+</div>
